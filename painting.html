@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Sacred Brush: Bhutanese Painting (Lha Zo)</title>
+    <!-- Using the requested Roboto font for a clean, modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styles: Resets and Font */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f2f2f2; /* Light Gray Background */
+            color: #333;
+            line-height: 1.7;
+            scroll-behavior: smooth;
+        }
+        
+        /* Color Palette Variables */
+        :root {
+            --color-primary-dark: #3b4a59; /* Dark Blue/Charcoal */
+            --color-accent-orange: #f4a261; /* Bright Orange Accent, inspired by saffron/gold */
+            --color-light: #f0f0f0;
+            --color-card-bg: #ffffff;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: var(--color-primary-dark);
+            color: var(--color-light);
+            padding: 35px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            margin-bottom: 40px;
+        }
+        header h1 {
+            font-size: clamp(1.8rem, 5vw, 2.5rem); /* Responsive font size */
+            margin-bottom: 5px;
+        }
+        
+        /* Main Content Layout */
+        main {
+            width: 90%; 
+            max-width: 900px;
+            margin: 0 auto;
+            padding-bottom: 60px;
+        }
+        section {
+            background-color: var(--color-card-bg);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--color-accent-orange);
+        }
+        h2 {
+            color: var(--color-primary-dark);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+
+        /* Image Styling */
+        .content-image {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 25px 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+        .highlight-box {
+            background-color: #fff8f0; 
+            border: 1px solid var(--color-accent-orange);
+            border-radius: 6px;
+            padding: 20px;
+            margin-top: 20px;
+            font-style: italic;
+            color: #555;
+        }
+        
+        /* List Styling for emphasis (Changed icon to a brush 🎨) */
+        h3 {
+             color: var(--color-primary-dark);
+             margin-top: 25px;
+             margin-bottom: 10px;
+             font-size: 1.3rem;
+        }
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        ul li {
+            margin-bottom: 10px;
+            padding-left: 1.5em;
+            text-indent: -1.5em;
+        }
+        ul li::before {
+            content: "🎨"; /* Paint brush icon */
+            color: var(--color-accent-orange);
+            font-weight: bold; 
+            display: inline-block; 
+            width: 1.5em; 
+        }
+
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            background-color: var(--color-primary-dark);
+            color: var(--color-light);
+            padding: 25px 0;
+            margin-top: 60px;
+            font-size: 0.95rem;
+            border-top: 5px solid var(--color-accent-orange);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 600px) {
+            main {
+                width: 95%;
+            }
+            section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>The Sacred Brush: Bhutanese Painting (Lha Zo)</h1>
+        <p>Aesthetics of Iconography, Color, and Proportion</p>
+    </header>
+
+    <main>
+        <section id="introduction">
+            <h2>Painting as a Devotional Art</h2>
+            <p>
+                In Bhutan, the art of painting, known as **Lha Zo**, is a deeply sacred practice, not merely a decorative one. Artists, who are often monks or highly trained artisans, follow strict canonical rules to ensure the image accurately represents its spiritual subject. The purpose of *Lha Zo* is to create a visual support for meditation and to transmit the essence of Buddhist philosophy.
+            </p>
+            <img src="https://placehold.co/900x400/f4a261/3b4a59?text=Bhutanese+Thangka+Painting" 
+                 alt="Bhutanese Thangka Scroll Painting in progress" 
+                 class="content-image"
+                 onerror="this.onerror=null; this.src='https://placehold.co/900x400/f4a261/3b4a59?text=Bhutanese+Painting+Mural';"
+            >
+        </section>
+
+        <section id="principles">
+            <h2>Aesthetic and Technical Principles</h2>
+            <p>
+                The aesthetic excellence of a Bhutanese painting is measured by its adherence to technical guidelines, which govern everything from the preparation of the canvas to the final application of gold leaf.
+            </p>
+            
+            <h3>Core Technical Disciplines:</h3>
+            <ul>
+                <li><strong>Thig Thad (Proportion and Grid):</strong> Every deity and figure must be laid out using a precise geometric grid. This grid dictates the proportion of the figure, ensuring iconographic correctness and spiritual power.</li>
+                <li><strong>Mineral Pigments:</strong> Colors are traditionally derived from natural earth and mineral sources, giving the paintings a rich, lasting quality. Gold is often used lavishly to symbolize divinity and the rarity of the teachings.</li>
+                <li><strong>The Five Sacred Colors:</strong> Each color carries deep symbolism: White (purity), Yellow (wealth/prosperity), Red (power/force), Blue (wisdom/sky), and Green (action/karma).</li>
+            </ul>
+        </section>
+
+        <section id="forms">
+            <h2>The Two Principal Forms</h2>
+            <p>
+                *Lha Zo* is primarily manifested in two distinct physical forms, each serving a different function within the monastic and public spheres.
+            </p>
+            
+            <h3>Main Forms of Painting:</h3>
+            <ul>
+                <li><strong>Thangka (Scroll Paintings):</strong> These are portable paintings, typically executed on cotton or silk. They are traditionally rolled up and carried by monks, used as teaching aids, or displayed temporarily during religious ceremonies.</li>
+                <li><strong>Lha Dri (Mural Painting):</strong> These are large, permanent frescoes painted directly onto the walls of temples (*Lhakhangs*) and fortresses (*Dzongs*). They depict life stories of key figures or entire mandalas, transforming the space into a sacred, didactic environment.</li>
+            </ul>
+            <div class="highlight-box">
+                "In *Lha Zo*, the artist serves as a conduit. The beauty of the final piece is secondary to its spiritual accuracy and ability to inspire devotion."
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Aesthetic Excellence and Cultural Preservation | Royal Academy Bhutan</p>
+        <p>© 2025 Sacred Painting Studies | All Rights Reserved</p>
+    </footer>
+</body>
+</html>

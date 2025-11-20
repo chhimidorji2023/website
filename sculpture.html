@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Art of Jimzo: Traditional Bhutanese Sculpture</title>
+    <!-- Using the requested Roboto font for a clean, modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styles: Resets and Font */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f2f2f2; /* Light Gray Background */
+            color: #333;
+            line-height: 1.7;
+            scroll-behavior: smooth;
+        }
+        
+        /* Color Palette Variables */
+        :root {
+            --color-primary-dark: #3b4a59; /* Dark Blue/Charcoal */
+            --color-accent-orange: #f4a261; /* Bright Orange Accent, inspired by saffron */
+            --color-light: #f0f0f0;
+            --color-card-bg: #ffffff;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: var(--color-primary-dark);
+            color: var(--color-light);
+            padding: 35px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            margin-bottom: 40px;
+        }
+        header h1 {
+            font-size: clamp(1.8rem, 5vw, 2.5rem); /* Responsive font size */
+            margin-bottom: 5px;
+        }
+        
+        /* Main Content Layout */
+        main {
+            width: 90%; 
+            max-width: 900px;
+            margin: 0 auto;
+            padding-bottom: 60px;
+        }
+        section {
+            background-color: var(--color-card-bg);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--color-accent-orange);
+        }
+        h2 {
+            color: var(--color-primary-dark);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+
+        /* Image Styling */
+        .content-image {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 25px 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+        .highlight-box {
+            background-color: #fff8f0; 
+            border: 1px solid var(--color-accent-orange);
+            border-radius: 6px;
+            padding: 20px;
+            margin-top: 20px;
+            font-style: italic;
+            color: #555;
+        }
+        
+        /* List Styling for emphasis */
+        h3 {
+             color: var(--color-primary-dark);
+             margin-top: 25px;
+             margin-bottom: 10px;
+             font-size: 1.3rem;
+        }
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        ul li {
+            margin-bottom: 10px;
+            padding-left: 1.5em;
+            text-indent: -1.5em;
+        }
+        ul li::before {
+            content: "◆"; /* Diamond icon */
+            color: var(--color-accent-orange);
+            font-weight: bold; 
+            display: inline-block; 
+            width: 1.5em; 
+        }
+
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            background-color: var(--color-primary-dark);
+            color: var(--color-light);
+            padding: 25px 0;
+            margin-top: 60px;
+            font-size: 0.95rem;
+            border-top: 5px solid var(--color-accent-orange);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 600px) {
+            main {
+                width: 95%;
+            }
+            section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Jimzo: The Sacred Art of Bhutanese Sculpture</h1>
+        <p>Preserving Form and Essence through Clay, Bronze, and Stone</p>
+    </header>
+
+    <main>
+        <section id="introduction">
+            <h2>The Spiritual Significance of *Jimzo*</h2>
+            <p>
+                In Bhutan, **Jimzo** (literally meaning "clay work") refers to the traditional art of sculpture, a practice revered as one of the thirteen arts and crafts (*Zorig Chusum*). These creations are fundamentally religious, serving as **sacred objects** for meditation and worship within fortress-monasteries (*Dzongs*) and temples. The purpose is not mere aesthetic pleasure, but the embodiment of divine figures, such as Buddhas and Bodhisattvas.
+            </p>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn0:ANd9GcQ3XofoU7bHRblvE3iRdSnP-MSV7XvKN_lx8w&s" 
+                 alt="Bhutanese Clay Sculpture of a Deity" 
+                 class="content-image"
+                 onerror="this.onerror=null; this.src='https://placehold.co/900x400/3b4a59/f4a261?text=Traditional+Sculpture';"
+            >
+        </section>
+
+        <section id="iconography">
+            <h2>Aesthetics of Accuracy: *Thig-tshad*</h2>
+            <p>
+                The primary aesthetic rule governing *Jimzo* is not individual expression, but **spiritual accuracy**. The sculptor must rigidly adhere to the system of **Thig-tshad**, the ancient canons of proportion. This geometric grid defines the precise measurements, symmetry, and relational placement of every feature—from the length of the earlobes to the width of the shoulders.
+            </p>
+            <div class="highlight-box">
+                "The mastery of proportion ensures that the finished work is an authentic representation of the divine, capable of supporting the viewer's spiritual practice. Deviation from these geometric rules is considered spiritually incorrect."
+            </div>
+            
+            <h3>Iconographic Requirements:</h3>
+            <ul>
+                <li><strong>Mudras (Hand Gestures):</strong> Specific hand positions that symbolize core teachings, such as giving, meditation, or fearlessness.</li>
+                <li><strong>Asanas (Postures):</strong> Codified sitting or standing poses that convey the figure's nature (e.g., teaching or wrath).</li>
+                <li><strong>Ushnisha and Urna:</strong> Distinctive features symbolizing supreme spiritual wisdom, placed on the crown and forehead, respectively.</li>
+            </ul>
+        </section>
+
+        <section id="process">
+            <h2>Traditional Materials and Technique</h2>
+            <p>
+                The preparation for *Jimzo* is as much a ritual as an artistic process. While some works use bronze or carved wood, the vast majority of monumental figures are crafted from clay.
+            </p>
+            
+            <h3>The Clay Sculpting Process:</h3>
+            <ul>
+                <li><strong>The Armature:</strong> A foundational frame of wood, bamboo, or metal is constructed first to bear the immense weight of the clay.</li>
+                <li><strong>Clay Mixing:</strong> Local earth is meticulously prepared, often mixed with binding agents like paper pulp, fiber, or religious substances for durability and texture.</li>
+                <li><strong>Gilding and Polychromy:</strong> Once the form is complete and dry, the sculpture is often painted with vibrant mineral pigments (Polychromy) and frequently adorned with gold leaf (Gilding), highlighting the features and adding radiance.</li>
+            </ul>
+            <p>
+                This intensive art form demands years of training and absolute dedication from the master craftsman, reflecting the high value placed on these devotional objects.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Aesthetic Excellence and Cultural Preservation | Royal Academy Bhutan</p>
+        <p>© 2025 The Art of Jimzo | All Rights Reserved</p>
+    </footer>
+</body>
+</html>

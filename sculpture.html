@@ -30,13 +30,17 @@
 
         /* 2. Header Styling */
         header {
+            position: relative; 
+            
             background-color: #FAF7E8; /* Creamy background */
             color: #34495E; /* Dark text */
-            padding: 35px 0;
+            
+            /* ADJUSTED: Increased left padding to push text away from the menu button area */
+            padding: 35px 0 20px 80px; 
+            
             text-align: center;
-            /* Softened Header Shadow for light background */
             box-shadow: 0 3px 10px rgba(0,0,0,0.1); 
-            margin-bottom: 40px;
+            margin-bottom: 40px; 
         }
         header h1 {
             font-size: clamp(1.8rem, 5vw, 2.5rem); 
@@ -47,6 +51,135 @@
             color: #34495E; /* Dark text for subtitle */
         }
         
+        /* 2.5. HAMBURGER MENU STYLING (The menu toggle is now fixed again) */
+
+        /* The button itself, FIXED again so it doesn't scroll with the header */
+        .menu-toggle {
+            position: fixed; 
+            top: 20px; /* Aligned to the top */
+            left: 20px;
+            z-index: 110; 
+            width: 45px;
+            height: 45px;
+            background-color: #F4B34C; /* Accent color background */
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .menu-toggle:hover {
+            transform: scale(1.05);
+        }
+
+        /* The three-line icon */
+        .menu-icon {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: #FFFFF0; /* Light ivory lines */
+            position: relative;
+            transition: background-color 0.3s;
+        }
+
+        .menu-icon::before,
+        .menu-icon::after {
+            content: '';
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: #FFFFF0;
+            position: absolute;
+            transition: transform 0.3s ease, top 0.3s ease;
+        }
+
+        .menu-icon::before {
+            top: -8px;
+        }
+
+        .menu-icon::after {
+            top: 8px;
+        }
+
+        /* Active state (X icon) */
+        .menu-toggle.active .menu-icon {
+            background-color: transparent; /* Hide middle line */
+        }
+
+        .menu-toggle.active .menu-icon::before {
+            top: 0;
+            transform: rotate(45deg);
+        }
+
+        .menu-toggle.active .menu-icon::after {
+            top: 0;
+            transform: rotate(-45deg);
+        }
+
+        /* --- Full-screen Menu Overlay -> SIDEBAR STYLING --- */
+        .overlay-menu {
+            position: fixed; /* This MUST remain fixed so the menu stays put when open */
+            top: 0;
+            left: 0;
+            /* New: Narrow width for sidebar */
+            width: 300px; 
+            max-width: 85%; /* Responsive safety for very small screens */
+            height: 100%;
+            background-color: #FFFFF0; /* Ivory background for clear contrast */
+            z-index: 105;
+            
+            /* Content Alignment for Sidebar */
+            display: flex;
+            flex-direction: column;
+            padding-top: 80px; /* Space for the hamburger icon */
+            padding-left: 10px;
+            
+            /* Animation: Slide out from the left */
+            transform: translateX(-100%); /* Initial position: off-screen left */
+            box-shadow: 4px 0 10px rgba(0,0,0,0.1);
+            transition: transform 0.4s ease; /* Only transition transform */
+        }
+
+        /* Visible state: Slide into view */
+        .overlay-menu.visible {
+            transform: translateX(0);
+        }
+
+        .overlay-menu ul {
+            list-style: none;
+            text-align: left; /* Align list content left */
+            padding: 0;
+            width: 100%; /* Take full width of the sidebar */
+        }
+
+        .overlay-menu li {
+            margin: 5px 0; /* Reduced margin */
+        }
+
+        .overlay-menu a {
+            color: #34495E;
+            font-size: 1.1rem; /* Smaller font for thin sidebar */
+            font-weight: 600; 
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 6px;
+            display: block; /* Make links block level */
+            text-align: left; /* Align links to the left */
+            /* Added a thin border on the left for a 'tab' feel */
+            border-left: 4px solid transparent; 
+            transition: color 0.3s, background-color 0.3s, border-left-color 0.3s;
+        }
+
+        .overlay-menu a:hover {
+            background-color: #F4B34C15; /* Very light accent background */
+            color: #F4B34C; /* Accent text color on hover */
+            border-left-color: #F4B34C; /* Saffron accent on the left */
+        }
+        /* --- END SIDEBAR STYLING --- */
+
         /* 3. Main Content Layout */
         main {
             width: 90%; 
@@ -55,26 +188,27 @@
             padding-bottom: 60px;
         }
         section {
-            background: #FAF7E8; /* Creamy/Off-White for sections (blends with body) */
+            background: #FAF7E8; 
             border-radius: 16px;
-            padding: 35px; /* Increased padding to match main site sections */
+            padding: 35px; 
             margin-bottom: 50px;
-            /* Fading Shadow effect: lighter, less opaque */
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.05); 
-            /* Switched to border-top accent */
             border-top: 4px solid #F4B34C; 
+            padding-top: 40px; 
         }
+        
+        /* Ensure H2 headings act as proper section anchors */
         h2 {
-            color: #34495E; /* Dark text for headings */
+            color: #34495E; 
             font-size: 1.8rem;
             font-weight: 700;
             margin-bottom: 15px;
-            border-bottom: 2px solid #ddd; /* Lighter separator */
+            border-bottom: 2px solid #ddd; 
             padding-bottom: 10px;
         }
         p {
             margin-bottom: 15px;
-            color: #34495E; /* Ensure all paragraph text is dark */
+            color: #34495E; 
         }
 
         /* Image Styling - Applied soft shadows and rounded corners */
@@ -83,20 +217,20 @@
             height: auto;
             max-height: 400px;
             object-fit: cover;
-            border-radius: 12px; /* Slightly more rounded corners */
+            border-radius: 12px; 
             margin: 25px 0;
             box-shadow: 0 6px 15px rgba(0,0,0,0.1);
         }
         
         /* Highlight Box: Use the whiter Ivory color to stand out slightly from the creamy background */
         .highlight-box {
-            background-color: #FFFFF0; /* Ivory (Card color from index) */
-            border: 2px solid #F4B34C; /* Saffron accent border */
+            background-color: #FFFFF0; 
+            border: 2px solid #F4B34C; 
             border-radius: 10px; 
             padding: 20px;
             margin-top: 20px;
             font-style: italic;
-            color: #34495E; /* Dark text for readability */
+            color: #34495E; 
         }
         
         /* List Styling for emphasis */
@@ -127,8 +261,8 @@
         /* 4. Footer Styling */
         footer {
             text-align: center;
-            background: #FAF7E8; /* Creamy background */
-            color: #34495E; /* Dark text */
+            background: #FAF7E8; 
+            color: #34495E; 
             padding: 28px 0;
             margin-top: 60px;
             font-size: 1rem;
@@ -145,6 +279,11 @@
         }
 
         @media (max-width: 600px) {
+            header {
+                 /* Ensure button placement works on mobile, header text should be shifted */
+                 padding-left: 70px; /* Reduced for smaller screens */
+                 padding-right: 10px;
+            }
             main {
                 width: 95%;
             }
@@ -155,6 +294,23 @@
     </style>
 </head>
 <body>
+    
+    <!-- 1. HAMBURGER MENU ICON (FIXED TOP LEFT) -->
+    <div class="menu-toggle" id="menuToggle">
+        <span class="menu-icon"></span>
+    </div>
+    
+    <!-- 2. SLIDE-OUT NAVIGATION SIDEBAR (The menu overlay must remain fixed to cover the screen) -->
+    <div class="overlay-menu" id="overlayMenu">
+        <ul>
+            <li><a href="index.html">Main Page (Zorig Chusum)</a></li>
+            <li><a href="painting.html">Painting (Lha Zo)</a></li>
+            <li><a href="sculpture.html">Sculpture (Jim Zo)</a></li>
+            <li><a href="weaving.html">Weaving (Thag Zo)</a></li>
+            <li><a href="carving.html">Wood Carving (Shing Zo)</a></li>
+        </ul>
+    </div>
+    
     <header>
         <h1>Jimzo: The Sacred Art of Bhutanese Sculpture</h1>
         <p>Preserving Form and Essence through Clay, Bronze, and Stone</p>
@@ -212,5 +368,21 @@
         <p>Aesthetic Excellence and Cultural Preservation | Royal Academy Bhutan</p>
         <p>© 2025 The Art of Jimzo | All Rights Reserved</p>
     </footer>
+    
+    <script>
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            const menu = document.getElementById('overlayMenu');
+            this.classList.toggle('active');
+            menu.classList.toggle('visible');
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('.overlay-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('menuToggle').classList.remove('active');
+                document.getElementById('overlayMenu').classList.remove('visible');
+            });
+        });
+    </script>
 </body>
 </html>

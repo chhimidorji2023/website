@@ -4,109 +4,255 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Royal Academy — Aesthetics & Technology (DGI)</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
+    /* 1. Global Reset and Base Styling */
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    /* === CREAMY/IVORY LIGHT MODE BODY STYLE === */
     body {
-      font-family: 'Roboto', sans-serif;
-      background-color: #f2f2f2;
-      color: #333;
-      line-height: 1.6;
+      font-family: 'Inter', sans-serif;
+      background-color: #FAF7E8; /* Creamy/Off-White Background */
+      color: #34495E; /* Charcoal/Forest Green - Default Body Text for light background */
+      min-height: 100vh;
     }
+
+    /* 2. Header Style */
     header {
-      background-color: #3b4a59;
-      color: #f0f0f0;
-      padding: 20px 0;
+      /* Navigation Bar: Creamy/Off-White to match body */
+      background: #FAF7E8; 
+      color: #34495E; /* Text color is dark */
+      padding: 40px 0;
       text-align: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      /* Softened Header Shadow for light background */
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1); 
     }
+
+    header img {
+      width: 90px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+    }
+
     nav ul {
       list-style: none;
       display: flex;
       justify-content: center;
-      gap: 25px;
-      margin-top: 10px;
+      gap: 30px;
+      margin-top: 15px;
     }
+
     nav a {
+      color: #34495E; /* Navigation Text: Dark */
       text-decoration: none;
-      color: #f0f0f0;
-      font-weight: 500;
+      font-weight: 600;
+      letter-spacing: 0.5px;
       transition: color 0.3s;
     }
-    nav a:hover {
-      color: #f4a261;
+
+    nav a:hover { 
+        color: #A73C4E; /* Navigation Link Hover: Vibrant Scarlet */
     }
+
+    /* 3. Main Content Layout */
     main {
-      width: 85%;
-      max-width: 1000px;
-      margin: 30px auto;
+      width: 90%;
+      max-width: 1100px;
+      margin: 40px auto;
     }
+
+    /* Section Style: Solid background for main content area (blends with body) */
     section {
-      margin-bottom: 40px;
-      background-color: #fff;
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      background: #FAF7E8; /* Creamy/Off-White for sections */
+      padding: 35px;
+      border-radius: 16px;
+      margin-bottom: 50px;
+      /* Fading Shadow effect: lighter, less opaque */
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.05); 
+      border-top: 4px solid #F4B34C; /* Accent line: Deep Ochre/Saffron */
     }
-    h2, h3 {
-      color: #3b4a59;
+
+    h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+        color: #F4B34C; /* Main Heading: Deep Ochre/Saffron */
+    }
+    
+    h2, h3, .card h4 {
+      text-align: center;
+      color: #34495E; /* Headings: Dark for light background */
       margin-bottom: 15px;
-      text-align: center;
+      font-weight: 700;
+      transition: color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); 
     }
-    p.description, p {
+
+    p.description {
       text-align: center;
-      color: #555;
-      margin-bottom: 20px;
+      font-size: 1.05rem;
+      color: #34495E; /* Dark text for secondary description */
+      margin-bottom: 25px;
     }
+
+    /* 4. Grid and Card Styling */
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
     }
+
     a.card {
-      background-color: #ffffff;
-      border-radius: 8px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-      padding: 15px;
-      text-align: center;
-      transition: transform 0.2s, box-shadow 0.2s;
+      /* Card background: Ivory/Slightly whiter to pop */
+      background: #FFFFF0; 
+      border-radius: 12px;
+      padding: 18px;
       text-decoration: none;
       color: inherit;
-      display: block;
+      position: relative;
+      /* Soft default shadow */
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1); 
+      /* Cooler and Smoother Transition */
+      transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), background-color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
+
     a.card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      transform: translateY(-8px); /* Deeper lift on hover */
+      /* Pronounced, fading hover shadow */
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15), 0 0 5px rgba(0,0,0,0.05);
+      /* Card color can slightly darken on hover */
+      background-color: #FAF7E8; /* Back to creamy color on hover */
     }
+    
+    /* Image Wrapper for the darkening effect */
+    .card-image-wrapper {
+        position: relative;
+        overflow: hidden; 
+        border-radius: 10px; 
+        margin-bottom: 12px; 
+        height: 170px;
+    }
+
+    /* Image Styling */
     .card img {
       width: 100%;
-      height: 150px;
+      height: 100%;
       object-fit: cover;
-      border-radius: 6px;
-      margin-bottom: 10px;
+      display: block;
+      transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
-    .card h4 {
-      color: #3b4a59;
-      margin-bottom: 5px;
-      font-size: 1.1rem;
+
+    /* Dark Overlay Pseudo-Element (for darkening the image on hover) */
+    .card-image-wrapper::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0); 
+        transition: background-color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        z-index: 10;
     }
+
+    /* Hover effects on the Image Wrapper */
+    a.card:hover .card-image-wrapper::after {
+        /* Subtle darkening, 20% black */
+        background-color: rgba(0, 0, 0, 0.2); 
+    }
+    
+    a.card:hover .card-image-wrapper img {
+        transform: scale(1.05); /* Slight zoom effect */
+    }
+
+    /* Text color change on hover (Title to accent color) */
+    a.card:hover h4 {
+        color: #A73C4E; /* Vibrant Scarlet highlight on hover for better visibility */
+    }
+    a.card:hover p {
+        color: #34495E; /* Ensure text remains dark for readability */
+    }
+
     .card p {
-      color: #666;
+      color: #34495E; 
       font-size: 0.95rem;
+      line-height: 1.4;
+      transition: color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); 
     }
+
+    /* Contact text fix - using primary text color */
+    #contact p[style] {
+        color: #34495E !important; /* Force dark color for contact email */
+    }
+
+    /* 5. Footer Style */
     footer {
+      /* Footer Background: Creamy/Off-White to blend */
+      background: #FAF7E8; 
+      color: #34495E; /* Dark text for light background */
       text-align: center;
-      background-color: #3b4a59;
-      color: #f0f0f0;
-      padding: 20px 0;
-      margin-top: 50px;
-      font-size: 0.9rem;
+      padding: 28px 0;
+      margin-top: 60px;
+      font-size: 1rem;
+      letter-spacing: 0.6px;
+      /* FOOTER BORDER ACCENT CHANGE */
+      border-top: 5px solid #F4B34C; /* Deep Ochre/Saffron accent */
+      /* Added a soft shadow to the footer */
+      box-shadow: 0 -4px 10px rgba(0,0,0,0.1);
     }
+    
+    /* 6. Animations and Responsiveness */
+    /* Smooth fade-in animation */
+    body, header, section, .card {
+      animation: fadeIn 0.9s ease forwards;
+      opacity: 0;
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    /* Responsive Fixes */
+    @media (max-width: 768px) {
+      header {
+        padding: 35px 0;
+      }
+      nav ul {
+        flex-wrap: wrap;
+        gap: 18px;
+      }
+      .card-image-wrapper {
+        height: 150px;
+      }
+      section {
+        padding: 25px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      h1 {
+        font-size: 1.6rem;
+      }
+      nav ul {
+        gap: 12px;
+      }
+      a.card {
+        padding: 15px;
+      }
+      .card h4 {
+        font-size: 1.05rem;
+      }
+    }
+    /* Smooth page transition when clicking cards */
+    a.card:active {
+      opacity: 0.4;
+      transform: scale(0.96);
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
   </style>
 </head>
 <body>
   <header>
-    <img src="https://dziseldra.com/images/company_logos/1619616991.jpg" alt="Royal Academy Logo" style="width:80px; height:auto; display:block; margin:0 auto 10px auto; border-radius:6px;">
+    <img src="https://dziseldra.com/images/company_logos/1619616991.jpg" alt="Royal Academy Logo" />
     <h1>Royal Academy — DGI</h1>
     <nav>
       <ul>
@@ -121,41 +267,69 @@
   <main>
     <section id="creations">
       <h3>Creations & Expressions</h3>
-      <p class="description">A simple showcase of art forms — made with creativity and care by students of the Royal Academy.</p>
+      <p class="description">A refined showcase of artistic works crafted with creativity and passion by students of the Royal Academy.</p>
+
       <div class="grid">
         <a class="card" href="sculpture.html">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3XofoU7bHRblvE3iRdSnP-MSV7XvKN_lx8w&s" alt="Sculpture">
+          <div class="card-image-wrapper">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3XofoU7bHRblvE3iRdSnP-MSV7XvKN_lx8w&s" alt="Sculpture">
+          </div>
           <h4>Sculpture</h4>
-          <p>Beautiful works carved from stone, wood, and clay inspired by Bhutanese tradition.</p>
+          <p>Elegant forms shaped from stone, wood, and clay inspired by Bhutanese artistry.</p>
         </a>
+
         <a class="card" href="textile.html">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHwcQz6neYd51Xsmx-5HFBGr7USD8qCwnnpg&s" alt="Textile">
+          <div class="card-image-wrapper">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHwcQz6neYd51Xsmx-5HFBGr7USD8qCwnnpg&s" alt="Textile">
+          </div>
           <h4>Textile</h4>
-          <p>Handwoven fabrics full of color and pattern, made with care and skill.</p>
+          <p>Colorful handwoven fabrics showcasing fine patterns and traditional skill.</p>
         </a>
+
         <a class="card" href="music.html">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBUPVJNzHA-402bMOk0iEDBdfZa277K0Ru7A&s" alt="Music">
+          <div class="card-image-wrapper">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBUPVJNzHA-402bMOk0iEDBdfZa277K0Ru7A&s" alt="Music">
+          </div>
           <h4>Music</h4>
-          <p>Traditional tunes and new melodies that express the soul of Bhutan.</p>
+          <p>Melodies and rhythms capturing the heart of Bhutanese culture.</p>
         </a>
+
         <a class="card" href="theatre.html">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-1Xaee8y91kcDrFHNX4PCaYsF4_I6PghpYg&s" alt="Theatre">
+          <div class="card-image-wrapper">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-1Xaee8y91kcDrFHNX4PCaYsF4_I6PghpYg&s" alt="Theatre">
+          </div>
           <h4>Theatre</h4>
-          <p>Performances that tell stories through expression and movement.</p>
+          <p>Performances that bring stories alive through expressive movement.</p>
         </a>
+
         <a class="card" href="hiphop_dance.html">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkepNZNw-Cc5PJ52fPpOa10iqhF4tomQfynw&s" alt="Hip Hop Dance">
+          <div class="card-image-wrapper">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkepNZNw-Cc5PJ52fPpOa10iqhF4tomQfynw&s" alt="Hip Hop Dance">
+          </div>
           <h4>Hip Hop Dance</h4>
-          <p>Fun and energetic dances combining modern style and Bhutanese rhythm.</p>
+          <p>Energetic choreography blending modern style with Bhutanese rhythm.</p>
         </a>
+
         <a class="card" href="painting.html">
-          <img src="https://terralingua.org/wp-content/uploads/2024/08/Langscape-Magazine_Hecht-Wangchuk_01.png" alt="Painting">
+          <div class="card-image-wrapper">
+            <img src="https://terralingua.org/wp-content/uploads/2024/08/Langscape-Magazine_Hecht-Wangchuk_01.png" alt="Painting">
+          </div>
           <h4>Painting</h4>
-          <p>Creative artworks mixing bright colors and traditional designs.</p>
+          <p>Artworks filled with vibrant colors and traditional inspiration.</p>
         </a>
       </div>
     </section>
+
     <section id="contact">
       <h3>Contact Us</h3>
-      <p class="description">Feel free to reach out for any questions or information.</p>
-      <p>Email: chhimi.dorji2023@academy.bt
+      <p class="description">Feel free to reach out for any inquiries or information.</p>
+      <!-- Removed inline style and rely on global CSS color -->
+      <p style="text-align:center; font-size:1rem;">Email: chhimi.dorji2023@academy.bt</p>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Royal Academy — Creativity & Technology Department
+  </footer>
+</body>
+</html>

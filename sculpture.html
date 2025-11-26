@@ -4,42 +4,50 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>The Art of Jimzo: Traditional Bhutanese Sculpture</title>
-    <!-- Using the requested Roboto font for a clean, modern look -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Switching to Inter font for consistency with the main site -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Base Styles: Resets and Font */
+        /* 1. Global Reset and Base Styling */
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        /* === CREAMY/IVORY LIGHT MODE BODY STYLE === */
         body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f2f2f2; /* Light Gray Background */
-            color: #333;
+            font-family: 'Inter', sans-serif;
+            background-color: #FAF7E8; /* Creamy/Off-White Background */
+            color: #34495E; /* Charcoal/Forest Green - Default Body Text for light background */
             line-height: 1.7;
             scroll-behavior: smooth;
-        }
-        
-        /* Color Palette Variables */
-        :root {
-            --color-primary-dark: #3b4a59; /* Dark Blue/Charcoal */
-            --color-accent-orange: #f4a261; /* Bright Orange Accent, inspired by saffron */
-            --color-light: #f0f0f0;
-            --color-card-bg: #ffffff;
+            min-height: 100vh;
+            animation: fadeIn 0.9s ease forwards;
+            opacity: 0;
         }
 
-        /* Header Styling */
+        /* Color Palette Matches Main Index */
+        /* Primary Dark Text: #34495E (Charcoal/Forest Green) */
+        /* Main Accent: #F4B34C (Deep Ochre/Saffron) */
+        /* Background Cream: #FAF7E8 */
+        /* Inner Card/Highlight Ivory: #FFFFF0 */
+
+        /* 2. Header Styling */
         header {
-            background-color: var(--color-primary-dark);
-            color: var(--color-light);
+            background-color: #FAF7E8; /* Creamy background */
+            color: #34495E; /* Dark text */
             padding: 35px 0;
             text-align: center;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            /* Softened Header Shadow for light background */
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1); 
             margin-bottom: 40px;
         }
         header h1 {
-            font-size: clamp(1.8rem, 5vw, 2.5rem); /* Responsive font size */
+            font-size: clamp(1.8rem, 5vw, 2.5rem); 
             margin-bottom: 5px;
+            color: #F4B34C; /* Accent color for main title */
+        }
+        header p {
+            color: #34495E; /* Dark text for subtitle */
         }
         
-        /* Main Content Layout */
+        /* 3. Main Content Layout */
         main {
             width: 90%; 
             max-width: 900px;
@@ -47,50 +55,57 @@
             padding-bottom: 60px;
         }
         section {
-            background-color: var(--color-card-bg);
-            border-radius: 10px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            border-left: 5px solid var(--color-accent-orange);
+            background: #FAF7E8; /* Creamy/Off-White for sections (blends with body) */
+            border-radius: 16px;
+            padding: 35px; /* Increased padding to match main site sections */
+            margin-bottom: 50px;
+            /* Fading Shadow effect: lighter, less opaque */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.05); 
+            /* Switched to border-top accent */
+            border-top: 4px solid #F4B34C; 
         }
         h2 {
-            color: var(--color-primary-dark);
+            color: #34495E; /* Dark text for headings */
             font-size: 1.8rem;
+            font-weight: 700;
             margin-bottom: 15px;
-            border-bottom: 2px solid #eee;
+            border-bottom: 2px solid #ddd; /* Lighter separator */
             padding-bottom: 10px;
         }
         p {
             margin-bottom: 15px;
+            color: #34495E; /* Ensure all paragraph text is dark */
         }
 
-        /* Image Styling */
+        /* Image Styling - Applied soft shadows and rounded corners */
         .content-image {
             width: 100%;
             height: auto;
             max-height: 400px;
             object-fit: cover;
-            border-radius: 8px;
+            border-radius: 12px; /* Slightly more rounded corners */
             margin: 25px 0;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
         }
+        
+        /* Highlight Box: Use the whiter Ivory color to stand out slightly from the creamy background */
         .highlight-box {
-            background-color: #fff8f0; 
-            border: 1px solid var(--color-accent-orange);
-            border-radius: 6px;
+            background-color: #FFFFF0; /* Ivory (Card color from index) */
+            border: 2px solid #F4B34C; /* Saffron accent border */
+            border-radius: 10px; 
             padding: 20px;
             margin-top: 20px;
             font-style: italic;
-            color: #555;
+            color: #34495E; /* Dark text for readability */
         }
         
         /* List Styling for emphasis */
         h3 {
-             color: var(--color-primary-dark);
-             margin-top: 25px;
-             margin-bottom: 10px;
-             font-size: 1.3rem;
+            color: #34495E;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+            font-weight: 600;
         }
         ul {
             list-style: none;
@@ -102,31 +117,39 @@
             text-indent: -1.5em;
         }
         ul li::before {
-            content: "◆"; /* Diamond icon */
-            color: var(--color-accent-orange);
+            content: "◆"; 
+            color: #F4B34C; /* Saffron accent bullet */
             font-weight: bold; 
             display: inline-block; 
             width: 1.5em; 
         }
 
-        /* Footer Styling */
+        /* 4. Footer Styling */
         footer {
             text-align: center;
-            background-color: var(--color-primary-dark);
-            color: var(--color-light);
-            padding: 25px 0;
+            background: #FAF7E8; /* Creamy background */
+            color: #34495E; /* Dark text */
+            padding: 28px 0;
             margin-top: 60px;
-            font-size: 0.95rem;
-            border-top: 5px solid var(--color-accent-orange);
+            font-size: 1rem;
+            letter-spacing: 0.6px;
+            /* FOOTER BORDER ACCENT CHANGE */
+            border-top: 5px solid #F4B34C; 
+            /* Added a soft shadow to the footer */
+            box-shadow: 0 -4px 10px rgba(0,0,0,0.1);
         }
 
-        /* Responsive Adjustments */
+        /* 5. Animations and Responsiveness */
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
         @media (max-width: 600px) {
             main {
                 width: 95%;
             }
             section {
-                padding: 20px;
+                padding: 25px;
             }
         }
     </style>
@@ -144,9 +167,9 @@
                 In Bhutan, **Jimzo** (literally meaning "clay work") refers to the traditional art of sculpture, a practice revered as one of the thirteen arts and crafts (*Zorig Chusum*). These creations are fundamentally religious, serving as **sacred objects** for meditation and worship within fortress-monasteries (*Dzongs*) and temples. The purpose is not mere aesthetic pleasure, but the embodiment of divine figures, such as Buddhas and Bodhisattvas.
             </p>
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn0:ANd9GcQ3XofoU7bHRblvE3iRdSnP-MSV7XvKN_lx8w&s" 
-                 alt="Bhutanese Clay Sculpture of a Deity" 
-                 class="content-image"
-                 onerror="this.onerror=null; this.src='https://placehold.co/900x400/3b4a59/f4a261?text=Traditional+Sculpture';"
+                alt="Bhutanese Clay Sculpture of a Deity" 
+                class="content-image"
+                onerror="this.onerror=null; this.src='https://placehold.co/900x400/F4B34C/34495E?text=Traditional+Sculpture+Placeholder';"
             >
         </section>
 
